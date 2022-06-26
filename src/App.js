@@ -1,4 +1,3 @@
-
 import Expenses from "./components/Expenses/Expenses";
 
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -10,11 +9,11 @@ function App() {
       amount: 290,
       date: new Date(2022, 7, 14),
     },
-    { 
-      id: "e2", 
-      title: "Mixed Pizza", 
-      amount: 490, 
-      date: new Date(2022, 3, 12), 
+    {
+      id: "e2",
+      title: "Mixed Pizza",
+      amount: 490,
+      date: new Date(2022, 3, 12),
     },
     {
       id: "e3",
@@ -30,16 +29,18 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log("in app.js");
+    console.log(expense);
+  };
+
   return (
     <div className="App">
-        <h1>Restaurant Menu</h1>
+      <h1>Restaurant Menu</h1>
       <p>These are the items in our menu with their respective price.</p>
-      <NewExpense></NewExpense>
-      <Expenses expenses={expenses}>
-    
-      </Expenses>
-      
-    </div>  
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+      <Expenses expenses={expenses}></Expenses>
+    </div>
   );
 }
 
