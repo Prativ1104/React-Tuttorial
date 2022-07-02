@@ -5,17 +5,17 @@ import Card from "../UI/Card";
 
 function ExpenseItem(props) {
   //let title = props.title;
-  const [titles, setTitles] = useState(props.title);
+  const [title, setTitles] = useState(props.title);
   const clickHandler = () => {
     setTitles("Updated");
-    console.log(titles);
+    console.log(title);
   };
 
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
-        <h2>{titles}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">{props.amount}</div>
       </div>
       <button onClick={clickHandler}>Change Item</button>
